@@ -1,1 +1,1 @@
-# Wetterstation-Bulme-Werkst-tten-Projekt-2024-2025
+# Wetterstation-Bulme-Werkstätten-Projekt-2024-2025
