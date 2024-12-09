@@ -92,6 +92,6 @@ Daten Station (HUB):
 
 
 ## Liste der Sachen für das Projekt:
-- ESP32-C6
-- ESP32-H2
-- ESP32-S3
+- Router-CPU: ESP32-S3
+- Router-Thread: ESP32-H2
+- Devices: ESP32-C6
