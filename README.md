@@ -38,18 +38,14 @@ Daten Station (HUB):
 
 ## Sensor List:
 
-<table border=0 cellpadding=0 cellspacing=0 width=1387 style='border-collapse:
- collapse;table-layout:fixed;width:1040pt'>
- <col width=124 style='mso-width-source:userset;mso-width-alt:3968;width:93pt'>
- <col width=143 span=2 style='mso-width-source:userset;mso-width-alt:4565;
- width:107pt'>
- <col width=977 style='mso-width-source:userset;mso-width-alt:31274;width:733pt'>
+
+<table>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 style='height:15.0pt'></td>
-  <td class=xl65></td>
-  <td class=xl65></td>
-  <td></td>
- </tr>
+  <td height=20 class=xl66 width=124 style='height:15.0pt;width:93pt'>Name</td>
+  <td class=xl66 width=143 style='width:107pt'>Zweck</td>
+  <td class=xl66 width=143 style='width:107pt'>Einheit</td>
+  <td class=xl67 width=977 style='width:733pt'>&nbsp;</td>
+
  <tr height=20 style='height:15.0pt'>
   <td height=20 class=xl65 style='height:15.0pt'>PT 100/1000</td>
   <td class=xl65>Temperaturmessung</td>
@@ -80,14 +76,12 @@ Daten Station (HUB):
   <td class=xl65></td>
   <td></td>
  </tr>
- <![if supportMisalignedColumns]>
  <tr height=0 style='display:none'>
   <td width=124 style='width:93pt'></td>
   <td width=143 style='width:107pt'></td>
   <td width=143 style='width:107pt'></td>
   <td width=977 style='width:733pt'></td>
  </tr>
- <![endif]>
 </table>
 
 
