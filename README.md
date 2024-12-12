@@ -93,3 +93,10 @@ Berechnung:
 - Router-CPU: ESP32-S3
 - Router-Thread: ESP32-H2
 - Devices: ESP32-C6
+
+
+## Webseiten für Informationen:
+
+- https://www.threadgroup.org/What-is-Thread/Developers
+- https://www.elsner-elektronik.de/de/professionelle-wetterdaten-erfassung-mit-suntracer-knx-pro
+- https://github.com/espressif/esp-matter
