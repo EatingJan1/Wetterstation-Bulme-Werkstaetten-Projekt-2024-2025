@@ -3,8 +3,8 @@
 ## Vorbereitung:
 
 ### Ideen:
-Outdoor-Wetterstation
-- Gewollte Messungen:
+#### Outdoor-Wetterstation
+Gewollte Messungen:
 - Luftfeuchtigkeit
 - UV-Strahlung
 - Luftdruck
@@ -18,7 +18,8 @@ Outdoor-Wetterstation
 - Dezibel Messung
 - Höhenlage
 - CO2 gehalt
-- Berechnung:
+  
+Berechnung:
 - Taupunkt
 - kWh/m2 (Sonneneinstrahlung)
 - gefühlte Temperatur
@@ -26,14 +27,17 @@ Outdoor-Wetterstation
 - Photovoltaik für Outdoor
 - Windmessung über Ultraschalwandler
 - Übertragung: Thread
-Mini Station:
+
+
+#### Mini Station:
 - Misst alle Daten in einem Standard Indoor Raum
 - Gewollte Messung:
 - Temperatur
 - Luftfeuchtigkeit
 - CO2 Gehalt
 - Luftdruck
-Daten Station (HUB):
+
+#### Daten Station (HUB)
 - Power over Ethernet (POE)
 
 ## Sensor List:
