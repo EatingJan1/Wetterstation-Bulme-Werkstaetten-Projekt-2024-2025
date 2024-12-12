@@ -25,7 +25,7 @@ Outdoor-Wetterstation
 - Sichtweite
 - Photovoltaik für Outdoor
 - Windmessung über Ultraschalwandler
-- Übertragung:
+- Übertragung: Thread
 Mini Station:
 - Misst alle Daten in einem Standard Indoor Raum
 - Gewollte Messung:
