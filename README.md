@@ -40,6 +40,9 @@ Berechnung:
 #### Daten Station (HUB)
 - Power over Ethernet (POE)
 
+Stromversorgung:
+- USB C
+
 ## Sensor List:
 
 
