@@ -40,7 +40,7 @@ Berechnung:
 #### Daten Station (HUB)
 
 
-Stromversorgung für ALLE STATIONEN:
+#### Stromversorgung für ALLE STATIONEN:
 - USB C 5V -> 3,3V Step-down Converter
 
 ## Liste der Sachen für das Projekt:
