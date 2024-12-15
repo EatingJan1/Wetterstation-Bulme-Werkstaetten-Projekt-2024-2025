@@ -38,10 +38,16 @@ Berechnung:
 - Luftdruck
 
 #### Daten Station (HUB)
-- Power over Ethernet (POE)
 
-Stromversorgung:
-- USB C
+
+Stromversorgung für ALLE STATIONEN:
+- USB C 5V -> 3,3V Step-down Converter
+
+## Liste der Sachen für das Projekt:
+- Router-CPU: ESP32-S3
+- Router-Thread: ESP32-H2
+- Devices: ESP32-C6
+
 
 ## Sensor List:
 
@@ -91,11 +97,6 @@ Stromversorgung:
  </tr>
 </table>
 
-
-## Liste der Sachen für das Projekt:
-- Router-CPU: ESP32-S3
-- Router-Thread: ESP32-H2
-- Devices: ESP32-C6
 
 
 ## Webseiten für Informationen:
