@@ -5,26 +5,34 @@
 ### Ideen:
 #### Outdoor-Wetterstation
 Gewollte Messungen:
-- Luftfeuchtigkeit
-- UV-Strahlung
-- Luftdruck
-- Luftpartikel
-- Temperatur
+- Luftfeuchtigkeit //easy BME680
+- UV-Strahlung //
+- Luftdruck  //easy BME680
+- Luftpartikel //easy BME680
+- Temperatur  //easy BME680
 - Regenmenge
 - Windrichtung
 - Windgeschwindigkeit
 - Bodenfeuchtigkeit
 - UV-Strahlung Winkel
 - Dezibel Messung
-- Höhenlage
+- Höhenlage  
 - CO2 gehalt
-  
+
+ #### Belüftete Sensoren
+- Temperatur
+- Luftfeuchtigkeit
+- CO2 Gehalt
+- Luftdruck
+- CO2 gehalt
+- Luftpartikel
+
 Berechnung:
 - Taupunkt
-- kWh/m2 (Sonneneinstrahlung)
+- kWh/m2 (Sonneneinstrahlung) //Mehrere Senosren notwendig
 - gefühlte Temperatur
-- Sichtweite
-- Photovoltaik für Outdoor
+- Sichtweite  // Feinstaub wichtig 
+- Photovoltaik für Outdoor  // Zu viele Variablen
 - Windmessung über Ultraschalwandler
 - Übertragung: Thread
 
@@ -38,6 +46,13 @@ Berechnung:
 - Luftdruck
 
 #### Daten Station (HUB)
+
+
+#### Belüftete Sensoren
+- Temperatur
+- Luftfeuchtigkeit
+- CO2 Gehalt
+- Luftdruck
 
 
 #### Stromversorgung für ALLE STATIONEN:
