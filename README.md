@@ -13,13 +13,13 @@ Gewollte Messungen:
 - Regenmenge
 - Windrichtung
 - Windgeschwindigkeit
-- Bodenfeuchtigkeit
+- Bodenfeuchtigkeit 
 - UV-Strahlung Winkel
 - Dezibel Messung
-- Höhenlage  
+- Höhenlage  //GPS oder Luftdruck aber zählt eher zu Berchnungen
 - CO2 gehalt
 
- #### Belüftete Sensoren
+ #### Belüftete Sensoren  //Mit 5V Lüfter hätte ich gesagt
 - Temperatur
 - Luftfeuchtigkeit
 - CO2 Gehalt
@@ -46,13 +46,6 @@ Berechnung:
 - Luftdruck
 
 #### Daten Station (HUB)
-
-
-#### Belüftete Sensoren
-- Temperatur
-- Luftfeuchtigkeit
-- CO2 Gehalt
-- Luftdruck
 
 
 #### Stromversorgung für ALLE STATIONEN:
