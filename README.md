@@ -112,3 +112,19 @@ Berechnung:
 - https://www.threadgroup.org/What-is-Thread/Developers
 - https://www.elsner-elektronik.de/de/professionelle-wetterdaten-erfassung-mit-suntracer-knx-pro
 - https://github.com/espressif/esp-matter
+
+### ESP Blogs -> OTA & Matter
+
+- https://developer.espressif.com/blog/ota-updates-framework/
+- https://developer.espressif.com/blog/matter/
+- https://developer.espressif.com/blog/matter-device-to-device-automations/
+- https://developer.espressif.com/blog/matter-bridge-for-non-matter-devices/
+- https://developer.espressif.com/blog/matter-thread-border-router-in-matter/
+- https://developer.espressif.com/blog/matter-multi-admin-identifiers-and-fabrics/
+- https://developer.espressif.com/blog/matter-security-model/
+- https://developer.espressif.com/blog/esp32-c2-and-why-it-matter-s/
+- https://developer.espressif.com/blog/ota-firmware-updates-with-esp-privilege-separation/
+- https://developer.espressif.com/blog/espressif-thread-border-router/
+- https://developer.espressif.com/blog/matter-and-certificate-revocation/
+- https://developer.espressif.com/blog/page/5/
+- https://www.espressif.com
