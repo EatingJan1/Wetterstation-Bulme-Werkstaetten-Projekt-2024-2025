@@ -10,14 +10,14 @@ Gewollte Messungen:
 - Luftdruck  //easy BME680
 - Luftpartikel //easy BME680
 - Temperatur  //easy BME680
-- Regenmenge
+- Regenmenge // Kippwage & Regenitensität über Zeit
 - Windrichtung
 - Windgeschwindigkeit
 - Bodenfeuchtigkeit 
-- UV-Strahlung Winkel
-- Dezibel Messung (Optional)
+- UV-Strahlung Winkel //Berechnen aufgrund von Breitengrad und Höhenlage
+- Dezibel Messung (Optional) // Eher NEIN
 - Höhenlage  //GPS oder Luftdruck aber zählt eher zu Berchnungen
-- CO2 gehalt
+- CO2 gehalt  
 
  #### Belüftete Sensoren  //Mit 5V Lüfter hätte ich gesagt
 - Temperatur
@@ -29,8 +29,8 @@ Gewollte Messungen:
 
 Berechnung:
 - Taupunkt
-- kWh/m2 (Sonneneinstrahlung) //Mehrere Sensoren notwendig
-- gefühlte Temperatur
+- kWh/m2 (Sonneneinstrahlung) //Mehrere Sensoren notwendig zu aufwendig
+- gefühlte Temperatur // Wind + Temp +Sonneneinstrahlung Vielleicht Über temperatur direkt an der gehäusewand ob eher hohe Sonneneinstrahlung oder niedrige 
 - Sichtweite  // Feinstaub wichtig 
 - Photovoltaik für Outdoor  // Zu viele Variablen
 - Windmessung über Ultraschalwandler
