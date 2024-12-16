@@ -15,7 +15,7 @@ Gewollte Messungen:
 - Windgeschwindigkeit
 - Bodenfeuchtigkeit 
 - UV-Strahlung Winkel
-- Dezibel Messung
+- Dezibel Messung (Optional)
 - Höhenlage  //GPS oder Luftdruck aber zählt eher zu Berchnungen
 - CO2 gehalt
 
@@ -29,7 +29,7 @@ Gewollte Messungen:
 
 Berechnung:
 - Taupunkt
-- kWh/m2 (Sonneneinstrahlung) //Mehrere Senosren notwendig
+- kWh/m2 (Sonneneinstrahlung) //Mehrere Sensoren notwendig
 - gefühlte Temperatur
 - Sichtweite  // Feinstaub wichtig 
 - Photovoltaik für Outdoor  // Zu viele Variablen
