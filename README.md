@@ -24,7 +24,6 @@ Gewollte Messungen:
 - Luftfeuchtigkeit
 - CO2 Gehalt
 - Luftdruck
-- CO2 gehalt
 - Luftpartikel
 
 Berechnung:
