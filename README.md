@@ -5,11 +5,11 @@
 ### Ideen:
 #### Outdoor-Wetterstation
 Gewollte Messungen:
-- Luftfeuchtigkeit //easy BME680
+- Luftfeuchtigkeit //easy BME680(END OF LIVE)/BME688 ist bisl besser und gleiches ####PINOUT
 - UV-Strahlung //
-- Luftdruck  //easy BME680
-- Luftpartikel //easy BME680
-- Temperatur  //easy BME680
+- Luftdruck  //easy BME680(END OF LIVE)/BME688 ist bisl besser und gleiches ####PINOUT
+- Luftpartikel 
+- Temperatur  //easy BME680(END OF LIVE)/BME688 ist bisl besser und gleiches ####PINOUT
 - Regenmenge // Kippwage & Regenitensität über Zeit
 - Windrichtung
 - Windgeschwindigkeit
