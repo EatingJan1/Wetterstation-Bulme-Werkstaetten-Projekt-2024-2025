@@ -51,9 +51,9 @@ Berechnung:
 - USB C 5V -> 3,3V Step-down Converter
 
 ## Liste der Sachen für das Projekt:
-- Router-CPU: ESP32-S3
-- Router-Thread: ESP32-H2
-- Devices: ESP32-C6
+- Router-CPU: ESP32-S3 // Externe Antenne normale-> Scheiße 
+- Router-Thread: ESP32-H2 // Externe Antenne normale-> Scheiße 
+- Devices: ESP32-C6 // Externe Antenne normale-> Scheiße 
 
 
 ## Sensor List:
