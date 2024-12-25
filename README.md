@@ -8,7 +8,7 @@ Gewollte Messungen:
 - Luftfeuchtigkeit //easy BME680(END OF LIVE)/BME688 ist bisl besser und gleiches PINOUT und kostet nur weniger 1€ teurer
 - UV-Strahlung //
 - Luftdruck  //easy BME680(END OF LIVE)/BME688 ist bisl besser und gleiches PINOUT und kostet nur weniger 1€ teurer
-- Luftpartikel 
+- Luftpartikel // gehackter von Ikea(belüftet Lüfter drin)
 - Temperatur  //easy BME680(END OF LIVE)/BME688 ist bisl besser und gleiches PINOUT und kostet nur weniger 1€ teurer
 - Regenmenge // Kippwage & Regenitensität über Zeit
 - Windrichtung
@@ -24,7 +24,7 @@ Gewollte Messungen:
 - Luftfeuchtigkeit
 - CO2 Gehalt
 - Luftdruck
-- Luftpartikel
+- Luftpartikel // gehackter von Ikea (belüftet Lüfter drin)
 
 Berechnung:
 - Taupunkt
