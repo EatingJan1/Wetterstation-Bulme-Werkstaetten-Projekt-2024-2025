@@ -24,7 +24,7 @@ Gewollte Messungen:
 - Luftfeuchtigkeit
 - CO2 Gehalt
 - Luftdruck
-- Luftpartikel // gehackter von Ikea (belüftet Lüfter drin)
+- Luftpartikel // gehackter von Ikea (belüftet Lüfter drin) -> Teurer es zu hacken / aus zu bauen wie einen Neuen zu Kaufen
 
 Berechnung:
 - Taupunkt
@@ -51,9 +51,9 @@ Berechnung:
 - USB C 5V -> 3,3V Step-down Converter
 
 ## Liste der Sachen für das Projekt:
-- Router-CPU: ESP32-S3 // Externe Antenne normale-> Scheiße 
-- Router-Thread: ESP32-H2 // Externe Antenne normale-> Scheiße 
-- Devices: ESP32-C6 // Externe Antenne normale-> Scheiße 
+- Router-CPU: ESP32-S3 // Externe Antenne normale-> Scheiße //Bessere Reichweiten Kontrollierung
+- Router-Thread: ESP32-H2 // Externe Antenne normale-> Scheiße //Bessere Reichweiten Kontrollierung
+- Devices: ESP32-C6 // Externe Antenne normale-> Scheiße //Bessere Reichweiten Kontrollierung
 
 
 ## Sensor List:
