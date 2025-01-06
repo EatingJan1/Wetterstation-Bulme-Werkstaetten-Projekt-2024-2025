@@ -127,3 +127,10 @@ Berechnung:
 - https://developer.espressif.com/blog/matter-and-certificate-revocation/
 - https://developer.espressif.com/blog/page/5/
 - https://www.espressif.com
+
+### Thread Netzwerk Programmieren und Simulieren
+
+- https://github.com/espressif/esp-idf/blob/v5.4/examples/openthread/ot_cli/README.md
+- https://openthread.io/reference/cli?hl=de
+- https://openthread.io/codelabs/openthread-simulation?hl=de#2
+- https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/network/esp_openthread.html
