@@ -43,6 +43,7 @@ Berechnung:
 - Luftfeuchtigkeit
 - CO2 Gehalt
 - Luftdruck
+- Helligkeit (Photowiderstand)
 
 #### Daten Station (HUB)
 
