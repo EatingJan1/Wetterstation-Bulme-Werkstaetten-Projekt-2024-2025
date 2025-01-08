@@ -127,6 +127,8 @@ Schittstelle zu unserer Datenbank und ins Local Area Network zur überwachung de
 
 ### ESP Blogs -> OTA & Matter
 
+[comment]: <> (Durchschauen ob gewisse Links gelöscht werden können. Bozogen auf OTA & Matter da manche links unbrauchbar sind)
+
 - https://developer.espressif.com/blog/ota-updates-framework/
 - https://developer.espressif.com/blog/matter/
 - https://developer.espressif.com/blog/matter-device-to-device-automations/
