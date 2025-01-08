@@ -131,6 +131,7 @@ Berechnung:
 
 ### Thread Netzwerk Programmieren und Simulieren
 
+- https://openthread.io/codelabs/esp-openthread-hardware?hl=de#1
 - https://github.com/espressif/esp-idf/blob/v5.4/examples/openthread/ot_cli/README.md
 - https://openthread.io/reference/cli?hl=de
 - https://openthread.io/codelabs/openthread-simulation?hl=de#2
