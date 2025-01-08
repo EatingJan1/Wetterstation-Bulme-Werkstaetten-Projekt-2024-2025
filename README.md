@@ -1,43 +1,46 @@
 # Wetterstation-Bulme-Werkstätten-Projekt-2024/2025
 
 ## Vorbereitung:
-
 ### Ideen:
 #### Outdoor-Wetterstation
 Gewollte Messungen:
-- Luftfeuchtigkeit //easy BME680(END OF LIVE)/BME688 ist bisl besser und gleiches PINOUT und kostet nur weniger 1€ teurer
-- UV-Strahlung //
-- Luftdruck  //easy BME680(END OF LIVE)/BME688 ist bisl besser und gleiches PINOUT und kostet nur weniger 1€ teurer
-- Luftpartikel // gehackter von Ikea(belüftet Lüfter drin)
-- Temperatur  //easy BME680(END OF LIVE)/BME688 ist bisl besser und gleiches PINOUT und kostet nur weniger 1€ teurer
-- Regenmenge // Kippwage & Regenitensität über Zeit
+- Luftfeuchtigkeit -> easy BME680(END OF LIVE)/BME688 ist bisl besser und gleiches PINOUT und kostet nur weniger 1€ teurer
+- UV-Strahlung 
+- Luftdruck -> easy BME680(END OF LIVE)/BME688 ist bisl besser und gleiches PINOUT und kostet nur weniger 1€ teurer
+- Luftpartikel -> gehackter von Ikea(belüftet Lüfter drin)
+- Temperatur -> easy BME680(END OF LIVE)/BME688 ist bisl besser und gleiches PINOUT und kostet nur weniger 1€ teurer
+- Regenmenge -> Kippwage & Regenitensität über Zeit
 - Windrichtung
 - Windgeschwindigkeit
 - Bodenfeuchtigkeit 
-- UV-Strahlung Winkel //Berechnen aufgrund von Breitengrad und Höhenlage
-- Dezibel Messung (Optional) // Eher NEIN
-- Höhenlage  //GPS oder Luftdruck aber zählt eher zu Berchnungen
-- CO2 gehalt  
+- UV-Strahlung Winkel -> Berechnen durch von Geolocation
+- Dezibel Messung (Optional, Eher nicht)
+- Höhenlage -> GPS oder Luftdruck aber zählt eher zu Berchnungen
+- CO2 gehalt
 
- #### Belüftete Sensoren  //Mit 5V Lüfter hätte ich gesagt
+
+##### Belüftete Sensoren  -> Mit 5V Lüfter -> ideal ohne moglichkeit ohne Lüfter
 - Temperatur
 - Luftfeuchtigkeit
 - CO2 Gehalt
 - Luftdruck
-- Luftpartikel // gehackter von Ikea (belüftet Lüfter drin) -> Teurer es zu hacken / aus zu bauen wie einen Neuen zu Kaufen
+- Luftpartikel -> gehackter von Ikea (Lüfter drin) -> Teurer es zu hacken / aus zu bauen wie einen Neuen zu Kaufen
 
-Berechnung:
+##### Berechnung:
 - Taupunkt
-- kWh/m2 (Sonneneinstrahlung) //Mehrere Sensoren notwendig zu aufwendig
-- gefühlte Temperatur // Wind + Temp +Sonneneinstrahlung Vielleicht Über temperatur direkt an der gehäusewand ob eher hohe Sonneneinstrahlung oder niedrige 
-- Sichtweite  // Feinstaub wichtig 
-- Photovoltaik für Outdoor  // Zu viele Variablen
+- kWh/m2 (Sonneneinstrahlung) -> Mehrere Sensoren notwendig zu aufwendig
+- gefühlte Temperatur -> Wind + Temp +Sonneneinstrahlung Vielleicht Über temperatur direkt an der gehäusewand ob eher hohe Sonneneinstrahlung oder niedrige 
+- Sichtweite -> Feinstaub wichtig 
+- Photovoltaik für Outdoor -> Zu viele Variablen
 - Windmessung über Ultraschalwandler
-- Übertragung: Thread
+
+##### Funk:
+Übertragung: Thread
 
 
 #### Mini Station:
-- Misst alle Daten in einem Standard Indoor Raum
+Misst alle Daten in einem Standard Indoor Raum
+
 - Gewollte Messung:
 - Temperatur
 - Luftfeuchtigkeit
@@ -45,19 +48,29 @@ Berechnung:
 - Luftdruck
 - Helligkeit (Photowiderstand)
 
-#### Daten Station (HUB)
+##### Funk:
+Übertragung: Thread
 
+#### Daten Station (HUB)
+Schittstelle zu unserer Datenbank und ins Local Area Network zur überwachung der Daten
+
+- SD Karten speicherung
+- Lan anstatt Wlan
+- Power über POE
 
 #### Stromversorgung für ALLE STATIONEN:
 - USB C 5V -> 3,3V Step-down Converter
 
 ## Liste der Sachen für das Projekt:
-- Router-CPU: ESP32-S3 // Externe Antenne normale-> Scheiße //Bessere Reichweiten Kontrollierung
-- Router-Thread: ESP32-H2 // Externe Antenne normale-> Scheiße //Bessere Reichweiten Kontrollierung
-- Devices: ESP32-C6 // Externe Antenne normale-> Scheiße //Bessere Reichweiten Kontrollierung
+
+### ESP's
+
+- Router-CPU: ESP32-S3 -> Externe Antenne -> schlecht, Bessere Reichweiten Kontrolle
+- Router-Thread: ESP32-H2 -> Externe Antenne -> schlecht, Bessere Reichweiten Kontrolle
+- Devices: ESP32-C6 -> Externe Antenne -> schlecht, Bessere Reichweiten Kontrolle
 
 
-## Sensor List:
+### Sensor List:
 
 
 <table>
@@ -109,7 +122,6 @@ Berechnung:
 
 ## Webseiten für Informationen:
 
-- https://www.threadgroup.org/What-is-Thread/Developers
 - https://www.elsner-elektronik.de/de/professionelle-wetterdaten-erfassung-mit-suntracer-knx-pro
 - https://github.com/espressif/esp-matter
 
@@ -136,3 +148,4 @@ Berechnung:
 - https://openthread.io/reference/cli?hl=de
 - https://openthread.io/codelabs/openthread-simulation?hl=de#2
 - https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/network/esp_openthread.html
+- https://www.threadgroup.org/What-is-Thread/Developers
