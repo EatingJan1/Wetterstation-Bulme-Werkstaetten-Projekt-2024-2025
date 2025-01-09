@@ -39,9 +39,10 @@ Gewollte Messungen:
 
 
 #### Mini Station:
+
 Misst alle Daten in einem Standard Indoor Raum
 
-- Gewollte Messung:
+Gewollte Messung:
 - Temperatur
 - Luftfeuchtigkeit
 - CO2 Gehalt
@@ -56,7 +57,30 @@ Schittstelle zu unserer Datenbank und ins Local Area Network zur überwachung de
 
 - SD Karten speicherung
 - Lan anstatt Wlan
+- Lan Driver
 - Power über POE
+- Überträgt alle Messdaten der letzen seit dem Letzten Timestamp der Datenbank einmalig pro Tag auf unseren MySQL Server.
+    - Server Jan:
+        - Geringe Ausfahl Sicherheit
+        - Gefahr das Daten beschädigt werden / Gelöscht
+        - Komplette Administration aller Daten und des Ganzen Systems
+        - Individuelle Leistung und weiterleitung (DNS)
+
+    - Schul SQL Datenbank:
+        - Keine Informationen über Systemabschaltungen (Wartungs arbeiten, Sommerferien)
+        - Keine Informationen von Dauer der Daten speicherung
+        - Auf System Administrator angewießen
+        - Keine Leistungs bestimmung
+        - Kein Eingriff ins Netzwerk
+    
+    - Externe SQL Server Anbieter:
+        - Teuer -> Lohnt sich bei dieser Art von Projekt
+        - Hohe Ausfahl Sicherheit
+        - Fast keine Gefahr das Daten beschädigt werden
+        - Teils auf Support angewießen.
+        - Je besser die Hardware desto Teurer pro Monat wobei der Server der selbe bleibt.
+        - Netzwerk Limitierungen (Aufpreise)
+        - Kann von Datenlacks betroffen sein.
 
 #### Stromversorgung für ALLE STATIONEN:
 - USB C 5V -> 3,3V Step-down Converter
