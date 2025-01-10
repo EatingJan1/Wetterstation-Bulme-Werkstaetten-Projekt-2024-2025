@@ -61,7 +61,7 @@ Schittstelle zu unserer Datenbank und ins Local Area Network zur überwachung de
 - Power über POE
 - Überträgt alle Messdaten der letzen seit dem Letzten Timestamp der Datenbank einmalig pro Tag auf unseren MySQL Server. (Welche möglichkeit bzw. Daten auf mehrere Server senden)
     - Server Jan:
-        - Im Falle eines Ausfahl Scheneller lösung (Jan), jedoch ist die schonz generäle höher als bei anderen
+        - Im Falle eines Ausfall -> Selbständige Lösung, jedoch Auafall wahrscheinlichkeit höher
         - Gefahr das Daten beschädigt werden / Gelöscht
         - Komplette Administration aller Daten und des Ganzen Systems
         - Individuelle Leistung und weiterleitung (DNS)
