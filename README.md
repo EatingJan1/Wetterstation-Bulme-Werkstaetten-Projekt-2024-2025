@@ -93,6 +93,9 @@ Schittstelle zu unserer Datenbank und ins Local Area Network zur überwachung de
 - Router-Thread: ESP32-H2 -> Externe Antenne -> schlecht, Bessere Reichweiten Kontrolle
 - Devices: ESP32-C6 -> Externe Antenne -> schlecht, Bessere Reichweiten Kontrolle
 
+Externe Antenne:
+    https://www.mouser.at/ProductDetail/Johanson-Technology/2450AT14A0100Tqs=YCa%2FAAYMW01CU618jkZ%252BCw%3D%3D&mgh=1&vip=1&utm_id=20600977424&gad_source=1&gbraid=0AAAAADn_wf00rwxBxZh_pgnh98nrY0sxW&gclid=Cj0KCQiAhbi8BhDIARIsAJLOluei9X01ipJ_uM1vxHrcQh4ZCm8I1i5n9sgfB7ooxuq3XKT6M_dWeCkaAr6xEALw_wcB
+
 
 ### Sensor List:
 
