@@ -7,7 +7,7 @@
 - Multisensor: BME688
 - CO2 Sensor: {Unsicher} Günstig und gute Qualität
 - USB-C Port
-- Pinheader Pins: GND, IO0, 3V3, TX, RX (5V Pin, Anbere Möglichkeiten offen, Steckverbindung, Zwischen GND und IO0 ein z.B.: Würth Elektronik 60900213421)
+- Pinheader Pins: GND, IO0, 3V3, TX, RX (5V Pin), (Anbere Möglichkeiten offen, Steckverbindung, Zwischen GND und IO0 ein z.B.: Würth Elektronik 60900213421)
 - 5V to 3V3 Shifter
 - Button: Kapazitiver Berührungssensor(TSOT23-6: Biliger, Hochwärtiges Touch Gefühl) oder Standard Button (Teurer, Billigeres Gefühl)
 
