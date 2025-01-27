@@ -39,6 +39,7 @@
 #define MATTER_DEVICE_TYPE 0x0302 // Temperatur- und Feuchtigkeitssensor
 #define VENDOR_ID 0x1234 // Beispielhafte Hersteller-ID
 #define PRODUCT_ID 0x5678 // Beispielhafte Produkt-ID
+#define SETUP_PIN_CODE "12345678" // Setup-PIN für Matter-Integration
 
 static esp_netif_t *init_openthread_netif(const esp_openthread_platform_config_t *config)
 {
@@ -68,7 +69,7 @@ static void dht11_task(void *param)
             matter_cluster_set_temperature(temp_cluster, temperature);
             matter_cluster_set_humidity(humidity_cluster, humidity);
         } else {
-            ESP_LOGW(TAG, "Fehler beim Lesen des DHT11-Sensors");
+            ESP_LOGW(TAG, "Fehler beim Lesen des DHT11-Sensors: %s", esp_err_to_name(result));
         }
 
         vTaskDelay(pdMS_TO_TICKS(5000)); // 5 Sekunden warten
@@ -94,6 +95,13 @@ static void ot_task_worker(void *aContext)
 
     // Matter-Device initialisieren
     matter_device_t *device = matter_device_create("DHT11-Sensor", VENDOR_ID, PRODUCT_ID, MATTER_DEVICE_TYPE);
+
+    // Setup-PIN und QR-Code konfigurieren
+    ESP_ERROR_CHECK(matter_device_set_pairing_code(device, SETUP_PIN_CODE));
+    char qr_code[256];
+    ESP_ERROR_CHECK(matter_device_generate_qr_code(device, qr_code, sizeof(qr_code)));
+    ESP_LOGI(TAG, "Matter QR-Code: %s", qr_code);
+
     ESP_ERROR_CHECK(matter_device_register(device));
 
     // OpenThread-CLI starten
@@ -120,9 +128,17 @@ void app_main(void)
     ESP_ERROR_CHECK(esp_netif_init());
     ESP_ERROR_CHECK(esp_vfs_eventfd_register(&eventfd_config));
 
+    // GPIO-Pin initialisieren
+    gpio_config_t io_conf = {
+        .pin_bit_mask = 1ULL << DHT11_GPIO_PIN,
+        .mode = GPIO_MODE_INPUT_OUTPUT_OD,
+        .pull_up_en = GPIO_PULLUP_ENABLE,
+    };
+    gpio_config(&io_conf);
+
     // OpenThread-Task starten
     xTaskCreate(ot_task_worker, "ot_cli_main", 10240, xTaskGetCurrentTaskHandle(), 5, NULL);
 
     // DHT11-Task starten
-    xTaskCreate(dht11_task, "dht11_task", 2048, NULL, 5, NULL);
+    xTaskCreate(dht11_task, "dht11_task", 4096, NULL, 5, NULL);
 }
