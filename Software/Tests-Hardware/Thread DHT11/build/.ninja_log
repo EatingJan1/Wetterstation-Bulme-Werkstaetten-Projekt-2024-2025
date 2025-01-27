@@ -1,0 +1,6 @@
+# ninja log v6
+23	158	1737921004007093319	/Users/janreiner/Desktop/Werkstätte/3. Klasse/Sommer Projekt/Wetterstation-Bulme-Werkstaetten-Projekt-2024-2025/Software/Tests-Hardware/Thread DHT11/build/CMakeFiles/confserver	4f69270e6885b7f4
+23	158	1737921004007093319	CMakeFiles/confserver	4f69270e6885b7f4
+22	3367	1737921058415242431	build.ninja	d58b1225c4792fc1
+18	138	1737921058470847085	CMakeFiles/confserver	4f69270e6885b7f4
+18	138	1737921058470847085	/Users/janreiner/Desktop/Werkstätte/3. Klasse/Sommer Projekt/Wetterstation-Bulme-Werkstaetten-Projekt-2024-2025/Software/Tests-Hardware/Thread DHT11/build/CMakeFiles/confserver	4f69270e6885b7f4
