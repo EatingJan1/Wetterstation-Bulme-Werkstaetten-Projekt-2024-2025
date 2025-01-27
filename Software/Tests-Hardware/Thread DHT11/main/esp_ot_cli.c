@@ -1,34 +1,44 @@
+/*
+ * SPDX-FileCopyrightText: 2021-2024 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: CC0-1.0
+ *
+ * OpenThread mit Matter-Integration und DHT11-Temperatursensor
+ *
+ * Dieses Beispiel liest Daten eines DHT11-Sensors aus und sendet sie 
+ * mit dem Matter-Standard über OpenThread ins Netzwerk. 
+ */
+
 #include <stdio.h>
-#include <unistd.h>
 #include <string.h>
+#include <unistd.h>
 
 #include "sdkconfig.h"
 #include "esp_err.h"
 #include "esp_event.h"
 #include "esp_log.h"
 #include "esp_netif.h"
-#include "esp_netif_types.h"
 #include "esp_openthread.h"
 #include "esp_openthread_cli.h"
 #include "esp_openthread_lock.h"
 #include "esp_openthread_netif_glue.h"
-#include "esp_openthread_types.h"
 #include "esp_ot_config.h"
 #include "esp_vfs_eventfd.h"
-#include "driver/uart.h"
+#include "driver/gpio.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-#include "hal/uart_types.h"
 #include "nvs_flash.h"
 #include "openthread/cli.h"
-#include "openthread/instance.h"
-#include "openthread/logging.h"
-#include "openthread/tasklet.h"
+#include "dht.h" // Bibliothek für DHT-Sensoren (z. B. https://github.com/beegee-tokyo/DHTesp)
+#include "matter.h" // Matter-API zur Gerätebeschreibung
 
-#include "dht/dht.h" // DHT11-Bibliothek
+#define TAG "ot_matter_dht11"
+#define DHT11_GPIO_PIN 4 // GPIO-Pin, an dem der DHT11 angeschlossen ist
 
-#define TAG "ot_esp_dht11"
-#define DHT11_PIN GPIO_NUM_4 // Pin, an dem der DHT11 angeschlossen ist
+// Matter Device-Type und Cluster-Konfiguration
+#define MATTER_DEVICE_TYPE 0x0302 // Temperatur- und Feuchtigkeitssensor
+#define VENDOR_ID 0x1234 // Beispielhafte Hersteller-ID
+#define PRODUCT_ID 0x5678 // Beispielhafte Produkt-ID
 
 static esp_netif_t *init_openthread_netif(const esp_openthread_platform_config_t *config)
 {
@@ -40,17 +50,28 @@ static esp_netif_t *init_openthread_netif(const esp_openthread_platform_config_t
     return netif;
 }
 
-static void read_dht11_data(void)
+static void dht11_task(void *param)
 {
-    int16_t temperature = 0; // Temperatur in °C
-    int16_t humidity = 0;    // Luftfeuchtigkeit in %
+    // Matter-Attribute für Temperatur und Luftfeuchtigkeit initialisieren
+    matter_cluster_t *temp_cluster = matter_cluster_create_temperature();
+    matter_cluster_t *humidity_cluster = matter_cluster_create_humidity();
 
-    // DHT11-Daten lesen
-    esp_err_t res = dht_read_data(DHT_TYPE_DHT11, DHT11_PIN, &humidity, &temperature);
-    if (res == ESP_OK) {
-        ESP_LOGI(TAG, "Temperatur: %.1f°C, Luftfeuchtigkeit: %.1f%%", temperature / 10.0, humidity / 10.0);
-    } else {
-        ESP_LOGE(TAG, "Fehler beim Lesen des DHT11: %s", esp_err_to_name(res));
+    while (1) {
+        int16_t temperature = 0;
+        int16_t humidity = 0;
+
+        esp_err_t result = dht_read_data(DHT_TYPE_DHT11, DHT11_GPIO_PIN, &humidity, &temperature);
+        if (result == ESP_OK) {
+            ESP_LOGI(TAG, "Temperatur: %.1f °C, Luftfeuchtigkeit: %.1f %%", temperature / 10.0, humidity / 10.0);
+
+            // Matter-Daten aktualisieren
+            matter_cluster_set_temperature(temp_cluster, temperature);
+            matter_cluster_set_humidity(humidity_cluster, humidity);
+        } else {
+            ESP_LOGW(TAG, "Fehler beim Lesen des DHT11-Sensors");
+        }
+
+        vTaskDelay(pdMS_TO_TICKS(5000)); // 5 Sekunden warten
     }
 }
 
@@ -62,25 +83,28 @@ static void ot_task_worker(void *aContext)
         .port_config = ESP_OPENTHREAD_DEFAULT_PORT_CONFIG(),
     };
 
-    // Initialize the OpenThread stack
+    // OpenThread-Stack initialisieren
     ESP_ERROR_CHECK(esp_openthread_init(&config));
 
-    esp_netif_t *openthread_netif;
-    openthread_netif = init_openthread_netif(&config);
+    // CLI initialisieren
+    esp_openthread_cli_init();
+
+    esp_netif_t *openthread_netif = init_openthread_netif(&config);
     esp_netif_set_default_netif(openthread_netif);
 
+    // Matter-Device initialisieren
+    matter_device_t *device = matter_device_create("DHT11-Sensor", VENDOR_ID, PRODUCT_ID, MATTER_DEVICE_TYPE);
+    ESP_ERROR_CHECK(matter_device_register(device));
+
+    // OpenThread-CLI starten
+    esp_openthread_cli_create_task();
+
+    // Haupt-Loop von OpenThread
     esp_openthread_launch_mainloop();
 
-    while (true)
-    {
-        // Sensor-Daten alle 5 Sekunden lesen
-        read_dht11_data();
-        vTaskDelay(pdMS_TO_TICKS(5000)); // 5 Sekunden warten
-    }
-
+    // Ressourcen freigeben
     esp_openthread_netif_glue_deinit();
     esp_netif_destroy(openthread_netif);
-
     esp_vfs_eventfd_unregister();
     vTaskDelete(NULL);
 }
@@ -96,6 +120,9 @@ void app_main(void)
     ESP_ERROR_CHECK(esp_netif_init());
     ESP_ERROR_CHECK(esp_vfs_eventfd_register(&eventfd_config));
 
-    // FreeRTOS-Task für OpenThread und DHT11 starten
+    // OpenThread-Task starten
     xTaskCreate(ot_task_worker, "ot_cli_main", 10240, xTaskGetCurrentTaskHandle(), 5, NULL);
+
+    // DHT11-Task starten
+    xTaskCreate(dht11_task, "dht11_task", 2048, NULL, 5, NULL);
 }
