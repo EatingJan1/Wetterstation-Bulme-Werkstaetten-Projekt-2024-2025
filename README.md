@@ -1,10 +1,9 @@
 # Wetterstation-Bulme-Werkstätten-Projekt-2024/2025
 
-## Vorbereitung:
-### Ideen:
+
 #### Outdoor-Wetterstation
-Gewollte Messungen:
-- Luftfeuchtigkeit -> easy BME680(END OF LIVE)/BME688 ist bisl besser und gleiches PINOUT und kostet nur weniger 1€ teurer
+Sensoren:
+- BME688: xyz
 - UV-Strahlung 
 - Luftdruck -> easy BME680(END OF LIVE)/BME688 ist bisl besser und gleiches PINOUT und kostet nur weniger 1€ teurer
 - Luftpartikel -> gehackter von Ikea(belüftet Lüfter drin)
@@ -144,37 +143,3 @@ Externe Antenne:
   <td width=977 style='width:733pt'></td>
  </tr>
 </table>
-
-
-
-## Webseiten für Informationen:
-
-- https://www.elsner-elektronik.de/de/professionelle-wetterdaten-erfassung-mit-suntracer-knx-pro
-- https://github.com/espressif/esp-matter
-
-### ESP Blogs -> OTA & Matter
-
-[comment]: <> (Durchschauen ob gewisse Links gelöscht werden können. Bozogen auf OTA & Matter da manche links unbrauchbar sind)
-
-- https://developer.espressif.com/blog/ota-updates-framework/
-- https://developer.espressif.com/blog/matter/
-- https://developer.espressif.com/blog/matter-device-to-device-automations/
-- https://developer.espressif.com/blog/matter-bridge-for-non-matter-devices/
-- https://developer.espressif.com/blog/matter-thread-border-router-in-matter/
-- https://developer.espressif.com/blog/matter-multi-admin-identifiers-and-fabrics/
-- https://developer.espressif.com/blog/matter-security-model/
-- https://developer.espressif.com/blog/esp32-c2-and-why-it-matter-s/
-- https://developer.espressif.com/blog/ota-firmware-updates-with-esp-privilege-separation/
-- https://developer.espressif.com/blog/espressif-thread-border-router/
-- https://developer.espressif.com/blog/matter-and-certificate-revocation/
-- https://developer.espressif.com/blog/page/5/
-- https://www.espressif.com
-
-### Thread Netzwerk Programmieren und Simulieren
-
-- https://openthread.io/codelabs/esp-openthread-hardware?hl=de#1
-- https://github.com/espressif/esp-idf/blob/v5.4/examples/openthread/ot_cli/README.md
-- https://openthread.io/reference/cli?hl=de
-- https://openthread.io/codelabs/openthread-simulation?hl=de#2
-- https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/network/esp_openthread.html
-- https://www.threadgroup.org/What-is-Thread/Developers
