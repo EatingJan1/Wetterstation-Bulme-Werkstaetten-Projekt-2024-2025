@@ -8,7 +8,7 @@
 #include <Wire.h>
 #include "LIB/Hyetometer/src/mwippe.h"
 #include "LIB/Anemometer/src/MCAnemometer.h"
-#include "LIB/Perhour/average_per_time.h"
+#include "LIB/average_per_time/average_per_time.h"
 
 
 #include "pinout_brd_V1:0.h"
