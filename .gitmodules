@@ -1,3 +1,6 @@
 [submodule "Software/Outdoor/src/LIB/Hyetometer"]
 	path = Software/Outdoor/src/LIB/Hyetometer
 	url = https://github.com/EatingJan1/MCHyetometer-REED
+[submodule "Software/Outdoor/src/LIB/Anemometer"]
+	path = Software/Outdoor/src/LIB/Anemometer
+	url = https://github.com/EatingJan1/MCAnemometer-Ultrasonic
