@@ -7,7 +7,7 @@
 #include <bme68xLibrary.h>
 #include <Wire.h>
 #include "LIB/Hyetometer/mwippe.h"
-#include "LIB/Anemometer/src/MCAnemometer.h"
+#include "LIB/Anemometer/MCAnemometer.h"
 #include "LIB/average_per_time/average_per_time.h"
 
 
