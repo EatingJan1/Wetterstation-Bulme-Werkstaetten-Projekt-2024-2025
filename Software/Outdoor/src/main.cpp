@@ -29,9 +29,7 @@ Anemometer anemometer = Anemometer(Trigger_1, Echo_1, Trigger_2, Echo_2, Trigger
 
 AveragePerTime perHour;
 
-const char *ssid = "WST-WLAN";
-//const char *ssid = "iPhone von Jan Niklas";
-//const char *password = "Passwort";
+const char *ssid = "";
 const char *password = "";
 
 
@@ -63,9 +61,9 @@ void setup() {
   Temp.begin();
   Hum.begin();
   Pres.begin();
-  //Light.begin();
-  //RainFlow.begin();
-  //Rain.begin();
+  Light.begin();
+  RainFlow.begin();
+  Rain.begin();
 
   Matter.begin();
 
