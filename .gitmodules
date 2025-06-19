@@ -1,0 +1,3 @@
+[submodule "Software/Outdoor/src/LIB/Hyetometer"]
+	path = Software/Outdoor/src/LIB/Hyetometer
+	url = https://github.com/EatingJan1/MCHyetometer-REED
