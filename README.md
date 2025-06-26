@@ -1,4 +1,7 @@
-# Wetterstation-Bulme-Werkstätten-Projekt-2024/2025
+# Completed school project - archived
+
+
+## Wetterstation-Bulme-Werkstätten-Projekt-2024/2025
 
 
 #### Outdoor-Wetterstation
