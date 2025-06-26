@@ -6,9 +6,9 @@
 #include <SparkFun_VEML6030_Ambient_Light_Sensor.h>
 #include <bme68xLibrary.h>
 #include <Wire.h>
-#include "LIB/Hyetometer/src/mwippe.h"
-#include "LIB/Anemometer/src/MCAnemometer.h"
-#include "LIB/Perhour/average_per_time.h"
+#include "LIB/Hyetometer/mwippe.h"
+#include "LIB/Anemometer/MCAnemometer.h"
+#include "LIB/average_per_time/average_per_time.h"
 
 
 #include "pinout_brd_V1:0.h"
@@ -24,13 +24,10 @@ MatterFlowSensor RainFlow;
 Bme68x bme;
 SparkFun_Ambient_Light light_I2C(AL_ADDR);
 
-mwippe rain_reed = mwippe(Reed1_Pin, Reed2_Pin, rainunit);
-Anemometer anemometer = Anemometer(Trigger_4, Echo_4, Trigger_3, Echo_3, Trigger_2, Echo_2, Trigger_1, Echo_1, distance_wind);
+mwippe rain_reed = mwippe(Reed2_Pin, rainunit);
+Anemometer anemometer = Anemometer(Trigger_1, Echo_1, Trigger_2, Echo_2, Trigger_3, Echo_3, Trigger_4, Echo_4, distance_wind);
 
 AveragePerTime perHour;
-
-//const char *ssid = "WST-WLAN";
-//const char *password = "";
 
 const char *ssid = "";
 const char *password = "";
@@ -71,25 +68,24 @@ void setup() {
   Matter.begin();
 
 
-if (!Matter.isDeviceCommissioned()) {
-  Serial.println("");
-  Serial.println("Outdoor weather Station is not commissioned yet.");
-  Serial.println("Initiate the device discovery in your Matter environment.");
-  Serial.println("Commission it to your Matter hub with the Matter Label");
-  Serial.printf("Manual pairing code: %s\r\n", Matter.getManualPairingCode().c_str());
-  Serial.printf("QR code URL: %s\r\n", Matter.getOnboardingQRCodeUrl().c_str());
-  
-  
-  uint32_t timeCount = 0;
-  while (!Matter.isDeviceCommissioned()) {
-    delay(100);
-    if ((timeCount++ % 100) == 0) {
-      Serial.println("Outdoor weather Station not commissioned yet. Waiting for commissioning.");
-    }
-  }
-  Serial.println("Outdoor weather Station is commissioned and connected to Wi-Fi. Ready for use.");
-}
+  if (!Matter.isDeviceCommissioned()) {
+    Serial.println("");
+    Serial.println("Outdoor weather Station is not commissioned yet.");
+    Serial.println("Initiate the device discovery in your Matter environment.");
+    Serial.println("Commission it to your Matter hub with the Matter Label");
+    Serial.printf("Manual pairing code: %s\r\n", Matter.getManualPairingCode().c_str());
+    Serial.printf("QR code URL: %s\r\n", Matter.getOnboardingQRCodeUrl().c_str());
 
+    
+    uint32_t timeCount = 0;
+    while (!Matter.isDeviceCommissioned()) {
+      delay(100);
+      if ((timeCount++ % 100) == 0) {
+        Serial.println("Outdoor weather Station not commissioned yet. Waiting for commissioning.");
+      }
+    }
+    Serial.println("Outdoor weather Station is commissioned and connected to Wi-Fi. Ready for use.");
+  }
 
 
 
@@ -129,11 +125,10 @@ if (!Matter.isDeviceCommissioned()) {
 void loop() {
   static uint32_t timeCounter = 0;
 
-  rain_reed.runcheckerwipp();
-  if(rain_reed.runcheckerwipp())
-  {
-    perHour.add(1);
-  }
+    if(rain_reed.runcheckerwipp())
+    {
+      perHour.add(1);
+    }
     
 
   if (!(timeCounter++ % 20)) { //TODO: For long term use Change Time %300(5min) or %600(10min) or % 900(15min)
@@ -144,12 +139,11 @@ void loop() {
     Serial.printf("Current Humidity is %.02f %\r\n", Hum.getHumidity());
     Serial.printf("Current Pressure is %.02f hPa\r\n", Pres.getPressure());
     Serial.printf("Current Light is %.02f Lux\r\n", Light.getlight());
-    Serial.printf("Current Rain is %.06f m^3/h\r\n", RainFlow.getFlow());
-    Serial.printf("Rain: %d \r\n", Rain.getRain());
-    Serial.printf("Rain Sum: %d \r\n", perHour.getSum(3600000UL));
-    Serial.printf("Rain Reed: %.06f \r\n", rain_reed.getDayrain());
-    Serial.printf("Current Windspeed is %.02f km/h\r\n", anemometer.getspeed());
-    Serial.printf("Current Windangle is %.02f°\r\n", anemometer.getangle());
+    Serial.printf("Current Rain is %.02f m^3/h\r\n", RainFlow.getFlow());
+    Serial.printf("Rain: %.02d \r\n", Rain.getRain());
+    log_i("Current Windspeed is %.02f km/h\r\n",  anemometer.getspeed());
+    log_i("Current Windgusts is %.02f km/h\r\n",  anemometer.getgustswind());
+    log_i("Current Windangle is %.02f km/h\r\n",  anemometer.getangle());
 
 
     bme.setOpMode(BME68X_FORCED_MODE);
@@ -162,6 +156,7 @@ void loop() {
     Pres.setPressure(data.pressure);  
   }
     Light.setlight(light_I2C.readLight());
+    Rain.setRain(0);
 
 
   float m3 = perHour.getSum(3600000UL)/1000;
@@ -176,6 +171,10 @@ void loop() {
   RainFlow.setFlow(m3);
 
   anemometer.readstate();
+  log_i("Angle: %f", anemometer.getangle());
+  log_i("Speed: %f", anemometer.getspeed());
+  log_i("Guest: %f", anemometer.getgustswind());
+
   }
 
   if(digitalRead(Button_Pin) == LOW and !button_state) {
@@ -192,7 +191,6 @@ void loop() {
   if(time_diff > windtimer and decommissioningTimeout > time_diff)
   {
     Serial.println("Anemometer calibrate Mode");
-    anemometer.calibrate();
     button_time_stamp = millis();
     time_diff = 0;
   }

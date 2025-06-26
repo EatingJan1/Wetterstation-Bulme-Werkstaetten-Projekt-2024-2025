@@ -2,7 +2,7 @@
 #include <WiFi.h>
 #include "LIB/Matter/matter_endpoints/MatterAirQualitySensor.h"
 #include "LIB/Matter/matter_endpoints/MatterLightSensor.h"
-#include "LIB/LEDAnimation/src/LEDAnimation.h"
+#include "LIB/LEDAnimation/LEDAnimation.h"
 #include <MHZ19.h>
 #include <SoftwareSerial.h>
 #include <bme68xLibrary.h>
