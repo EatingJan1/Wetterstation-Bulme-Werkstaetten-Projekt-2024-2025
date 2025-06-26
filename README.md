@@ -1,5 +1,5 @@
 # Completed school project - archived
-
+the project continues here: https://github.com/EatingJan1/BlueRubberDuck-Weatherstation
 
 ## Wetterstation-Bulme-Werkstätten-Projekt-2024/2025
 
